@@ -1,0 +1,10 @@
+bf	~/.config/bmfiles
+bd	~/.config/bmdirs
+cfb	~/.bashrc
+cfa	~/.config/aliasrc
+cfv	~/.config/nvim/init.vim
+cfi	~/.config/i3/config
+cfd	~/.Xdefaults
+cfmb	~/.config/ncmpcpp/bindings
+cfmc	~/.config/ncmpcpp/config
+cfB	~/.config/i3blocks/config

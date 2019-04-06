@@ -1,0 +1,23 @@
+#!/bin/sh
+alias ka="killall" \
+	mkd="mkdir -pv" \
+	mpv="mpv --input-ipc-server=/tmp/mpvsoc$(date +%s)" \
+	calcurse="calcurse -D ~/.config/calcurse" \
+	p="sudo pacman" \
+	SS="sudo systemctl" \
+	f="$FILE" \
+	g="git" \
+	v="$EDITOR" \
+	x="sxiv -ft *" \
+	sdn="sudo shutdown -h now" \
+	ls="ls -hN --color=auto --group-directories-first" \
+	grep="grep --color=auto" \
+	yt="youtube-dl --add-metadata -i -o '%(upload_date)s-%(title)s.%(ext)s'" \
+	yta="yt -x -f bestaudio/best" \
+	ref="shortcuts >/dev/null; source ~/.config/shortcutrc" \
+	lsp="pacman -Qett --color=always | less" \
+	ffmpeg="ffmpeg -hide_banner"
+
+command -v nvim >/dev/null && alias vim="nvim" vimdiff="nvim -d" # Use neovim for vim if present.
+
+vf() { fzf | xargs -r -I % $EDITOR % ;}
