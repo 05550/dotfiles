@@ -1,5 +1,6 @@
 # vim: filetype=i3
 for_window [class="^.*"] border pixel 2
+set $term --no-startup-id $TERMINAL
 set $mod Mod4
 exec --no-startup-id mpd
 exec --no-startup-id setbg
@@ -7,7 +8,6 @@ exec --no-startup-id dunst
 exec --no-startup-id xcompmgr
 exec --no-startup-id remaps
 exec --no-startup-id unclutter
-exec_always --no-startup-id mpdupdate
 bar {
 	font pango:mono 10
 	status_command i3blocks
