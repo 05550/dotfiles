@@ -1,0 +1,18 @@
+#!/bin/sh
+[ -z "$2" ] && num="2" || num="$2"
+case "$1" in
+	u*) pulsemixer --change-volume +"$num" ;;
+	d*) pulsemixer --change-volume -"$num" ;;
+	m*) pulsemixer --toggle-mute ;;
+	truemute) pulsemixer --mute ;;
+	play) mpc play ;;
+	n*) mpc next ;;
+	prev) mpc prev ;;
+	t*) mpc toggle ;;
+	p*) mpc pause ; pauseallmpv ;;
+	f*) mpc seek +"$num" ;;
+	b*) mpc seek -"$num" ;;
+	r*) mpc seek 0% ;;
+	*)
+esac
+pkill -RTMIN+10 i3blocks

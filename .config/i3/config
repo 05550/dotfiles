@@ -15,20 +15,20 @@ bar {
 	mode dock
 	modifier None
 }
-bindsym $mod+Return 		exec st
+bindsym $mod+Return 		exec $term
 bindsym $mod+Shift+Return	exec --no-startup-id samedir
 bindsym $mod+space 		floating toggle
 bindsym $mod+Shift+Escape 	exec --no-startup-id prompt "Quit i3-gaps?" "i3-msg exit"
-bindsym $mod+Shift+Delete	exec --no-startup-id lmc truemute ; exec --no-startup-id lmc pause ; exec --no-startup-id pauseallmpv; workspace 0; exec st -e htop ; exec st -e $FILE
+bindsym $mod+Shift+Delete	exec --no-startup-id lmc truemute ; exec --no-startup-id lmc pause ; exec --no-startup-id pauseallmpv; workspace 0; exec $term -e htop ; exec $term -e $FILE
 bindsym $mod+q			[con_id="__focused__" instance="^(?!dropdown_).*$"] kill
 bindsym $mod+w			exec --no-startup-id $BROWSER
-bindsym $mod+y			exec st -e calcurse -D ~/.config/calcurse
-bindsym $mod+i			exec st -e htop
-bindsym $mod+a			exec st -e pulsemixer
+bindsym $mod+y			exec $term -e calcurse -D ~/.config/calcurse
+bindsym $mod+i			exec $term -e htop
+bindsym $mod+a			exec $term -e pulsemixer
 bindsym $mod+d			exec --no-startup-id dmenu_run
-bindsym $mod+m			exec --no-startup-id st -e ncmpcpp
-bindsym $mod+apostrophe		split horizontal ;; exec st
-bindsym $mod+slash		split vertical ;; exec st
+bindsym $mod+m			exec --no-startup-id $term -e ncmpcpp
+bindsym $mod+apostrophe		split horizontal ;; exec $term
+bindsym $mod+slash		split vertical ;; exec $term
 bindsym $mod+Shift+y		exec --no-startup-id i3resize left
 bindsym $mod+Shift+u		exec --no-startup-id i3resize down
 bindsym $mod+Shift+i		exec --no-startup-id i3resize up
@@ -49,40 +49,23 @@ bindsym $mod+Shift+h		move left 30
 bindsym $mod+Shift+j		move down 30
 bindsym $mod+Shift+k		move up 30
 bindsym $mod+Shift+l		move right 30
-set $ws1 "α"
-set $ws2 "β"
-set $ws3 "γ"
-set $ws4 "δ"
-set $ws5 "ε"
-set $ws6 "ζ"
-set $ws7 "η"
-set $ws8 "θ"
-set $ws9 "ι"
-set $ws10 "κ"
-bindsym $mod+1		workspace $ws1
-bindsym $mod+2		workspace $ws2
-bindsym $mod+3		workspace $ws3
-bindsym $mod+4		workspace $ws4
-bindsym $mod+5		workspace $ws5
-bindsym $mod+6		workspace $ws6
-bindsym $mod+7		workspace $ws7
-bindsym $mod+8		workspace $ws8
-bindsym $mod+9		workspace $ws9
-bindsym $mod+0		workspace $ws10
-bindsym $mod+Shift+1	move container to workspace $ws1
-bindsym $mod+Shift+2	move container to workspace $ws2
-bindsym $mod+Shift+3	move container to workspace $ws3
-bindsym $mod+Shift+4	move container to workspace $ws4
-bindsym $mod+Shift+5	move container to workspace $ws5
-bindsym $mod+Shift+6	move container to workspace $ws6
-bindsym $mod+Shift+7	move container to workspace $ws7
-bindsym $mod+Shift+8	move container to workspace $ws8
-bindsym $mod+Shift+9	move container to workspace $ws9
-bindsym $mod+Shift+0	move container to workspace $ws10
-bindsym $mod+F1		restart
-bindsym $mod+F2		exec --no-startup-id dmenumount
-bindsym $mod+F3		exec --no-startup-id dmenuumount
-bindsym $mod+F4		exec st -e nmtui
+bindsym $mod+1		workspace "一"
+bindsym $mod+2		workspace "二"
+bindsym $mod+3		workspace "三"
+bindsym $mod+4		workspace "四"
+bindsym $mod+5		workspace "五"
+bindsym $mod+6		workspace "六"
+bindsym $mod+7		workspace "七"
+bindsym $mod+Shift+1	move container to workspace "一"
+bindsym $mod+Shift+2	move container to workspace "二"
+bindsym $mod+Shift+3	move container to workspace "三"
+bindsym $mod+Shift+4	move container to workspace "四"
+bindsym $mod+Shift+5	move container to workspace "五"
+bindsym $mod+Shift+6	move container to workspace "六"
+bindsym $mod+Shift+7	move container to workspace "七"
+bindsym $mod+F6		restart
+bindsym $mod+F7		exec --no-startup-id dmenumount
+bindsym $mod+F8		exec --no-startup-id dmenuumount
 bindsym $mod+F10	exec --no-startup-id sudo -A shutdown -h now
 bindsym $mod+F11	exec --no-startup-id sudo -A reboot
 bindsym $mod+F12	exec --no-startup-id mpc pause; exec --no-startup-id pauseallmpv ; exec --no-startup-id i3lock -e -f -c 1d2021
